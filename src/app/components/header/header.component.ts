@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TubeService } from './../../shared/tube.service';
 import { Tube } from './../../shared/tube.model';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { Tube } from './../../shared/tube.model';
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('input')inputElement!: ElementRef;
-  constructor(private tubeService : TubeService) { }
+  constructor(private tubeService : TubeService, public dialog: MatDialog) { }
   videos: Tube[] = [];
   loading = false;
   ngOnInit(): void {
@@ -37,6 +38,18 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  // call
+  // dialog
 
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
+@Component({
+  selector: 'dialog-content-example-dialog',
+  templateUrl: 'setting.html',
+})
+export class DialogContentExampleDialog {}

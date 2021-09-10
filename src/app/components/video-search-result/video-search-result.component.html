@@ -4,14 +4,14 @@
     <mat-grid-list cols="1" rowHeight="50px" gutterSize="20px"  >
       <mat-grid-tile>
         <div class="sort-content">
-          <button mat-button [matMenuTriggerFor]="menu"><mat-icon>sort</mat-icon>Sort</button>
+          <button mat-raised-button color="secondary" [matMenuTriggerFor]="menu"><mat-icon>sort</mat-icon>Sort</button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>Sort by date</button>
-            <button mat-menu-item>Sort by rating</button>
-            <button mat-menu-item>Sort by relevance</button>
-            <button mat-menu-item>Sort by title</button>
-            <button mat-menu-item>Sort by videoCount</button>
-            <button mat-menu-item>Sort by viewCount</button>
+            <button mat-menu-item  (click)="sortByDate()">Sort by date</button>
+            <button mat-menu-item (click)="sortByRating()">Sort by rating</button>
+            <button mat-menu-item (click)="sortByRelevance()">Sort by relevance</button>
+            <button mat-menu-item (click)="sortByTitle()">Sort by title</button>
+            <button mat-menu-item (click)="sortByVideoCount()">Sort by videoCount</button>
+            <button mat-menu-item (click)="sortByViewCount()">Sort by viewCount</button>
           </mat-menu>
           <span>order </span>
           <span>From </span>

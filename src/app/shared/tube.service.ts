@@ -9,7 +9,7 @@ export class TubeService {
       // call api
 getDataApi(name:string){
   // return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyDOwINZY5x8U9DZvtsSyKZWE_jfgDPya_c&type=video&maxResults=50`);
-  return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyC1z7iY3EMqDtV44LuG9RolRLthIQws3TU&type=video&maxResults=50`);
+  return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyBgGT2xxaQQLNKsRIIVfWd9wmNIk8cPPG4&type=video&maxResults=50`);
 }
 addSearch(value:string){
     this.searchValue = value;
@@ -17,4 +17,25 @@ addSearch(value:string){
 getSearchValue(){
   return this.searchValue;
 }
+
+callApiOrderByDate(name:string){
+  return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyBgGT2xxaQQLNKsRIIVfWd9wmNIk8cPPG4&type=video&maxResults=50&order=date`);
+}
+callApiOrderByRating(name:string){
+  return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyBgGT2xxaQQLNKsRIIVfWd9wmNIk8cPPG4&type=video&maxResults=50&order=rating`);
+}
+callApiOrderByViewCount(name:string){
+  return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyBgGT2xxaQQLNKsRIIVfWd9wmNIk8cPPG4&type=video&maxResults=50&order=viewCount`);
+}
+callApiOrderByRelevance(name:string){
+  return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyBgGT2xxaQQLNKsRIIVfWd9wmNIk8cPPG4&type=video&maxResults=50&order=relevance`);
+}
+callApiOrderByTitle(name:string){
+  return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyBgGT2xxaQQLNKsRIIVfWd9wmNIk8cPPG4&type=video&maxResults=50&order=title`);
+}
+callApiOrderByVideoCount(name:string){
+  return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyBgGT2xxaQQLNKsRIIVfWd9wmNIk8cPPG4&type=video&maxResults=50&order=videoCount`);
+}
+
+
 }

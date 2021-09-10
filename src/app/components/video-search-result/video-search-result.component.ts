@@ -20,23 +20,106 @@ export class VideoSearchResultComponent implements OnInit {
 
   // sort
   sortByDate(){
-       let vl = this.tubeService.getSearchValue();
-       console.log(vl);
+       let value = this.tubeService.getSearchValue();
+       this.videos = [];
+      //  console.log(value);
+      this.tubeService.callApiOrderByDate(value).subscribe((data:any)=>{
+
+        for(let item of data.items){
+          this.videos.push({
+            title: item.snippet.title,
+            urlVideo:item.id.videoId,
+            description: item.snippet.description,
+            thumbnails: item.snippet.thumbnails.high.url
+          });
+      }
+      console.log(this.videos);
+
+})
+
 
   }
   sortByRating(){
+    let value = this.tubeService.getSearchValue();
+    this.videos = [];
+    this.tubeService.callApiOrderByRating(value).subscribe((data:any)=>{
+      for(let item of data.items){
+        this.videos.push({
+          title: item.snippet.title,
+          urlVideo:item.id.videoId,
+          description: item.snippet.description,
+          thumbnails: item.snippet.thumbnails.high.url
+        });
+    }
+    console.log(this.videos);
+
+})
+
 
   }
   sortByRelevance(){
+    let value = this.tubeService.getSearchValue();
+    this.videos = [];
+    this.tubeService.callApiOrderByRelevance(value).subscribe((data:any)=>{
+      for(let item of data.items){
+        this.videos.push({
+          title: item.snippet.title,
+          urlVideo:item.id.videoId,
+          description: item.snippet.description,
+          thumbnails: item.snippet.thumbnails.high.url
+        });
+    }
+    console.log(this.videos);
 
+})
   }
   sortByTitle(){
+    let value = this.tubeService.getSearchValue();
+    this.videos = [];
+    this.tubeService.callApiOrderByTitle(value).subscribe((data:any)=>{
+      for(let item of data.items){
+        this.videos.push({
+          title: item.snippet.title,
+          urlVideo:item.id.videoId,
+          description: item.snippet.description,
+          thumbnails: item.snippet.thumbnails.high.url
+        });
+    }
+    console.log(this.videos);
 
+})
   }
   sortByVideoCount(){
+    let value = this.tubeService.getSearchValue();
+    this.videos = [];
+    this.tubeService.callApiOrderByVideoCount(value).subscribe((data:any)=>{
+      for(let item of data.items){
+        this.videos.push({
+          title: item.snippet.title,
+          urlVideo:item.id.videoId,
+          description: item.snippet.description,
+          thumbnails: item.snippet.thumbnails.high.url
+        });
+    }
+    console.log(this.videos);
 
+})
   }
   sortByViewCount(){
+    let value = this.tubeService.getSearchValue();
+    this.videos = [];
+    this.tubeService.callApiOrderByViewCount(value).subscribe((data:any)=>{
+      for(let item of data.items){
+        this.videos.push({
+          title: item.snippet.title,
+          urlVideo:item.id.videoId,
+          description: item.snippet.description,
+          thumbnails: item.snippet.thumbnails.high.url
+        });
+    }
+    console.log(this.videos);
+
+})
 
   }
 

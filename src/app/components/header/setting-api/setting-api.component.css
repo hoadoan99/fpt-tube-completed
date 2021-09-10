@@ -3,3 +3,9 @@
   flex-direction: column;
   align-items: flex-start;
 }
+.wrapper-setting{
+
+}
+mat-form-field{
+  width: 500px;
+}

@@ -49,4 +49,8 @@
 </div>
 <!-- loading  -->
 <mat-spinner *ngIf="loading" style="margin:  0 auto; font-size: 20px; margin-top:  20px;" ></mat-spinner>
-<h1 *ngIf="isAddApiKey">Please enter API Key!!!</h1>
+<div class="alert" *ngIf="isAddApiKey">
+  <h1>
+    Please enter API Key before search!!!
+  </h1>
+</div>

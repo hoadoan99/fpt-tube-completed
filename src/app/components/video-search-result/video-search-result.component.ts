@@ -10,7 +10,10 @@ import { TubeService } from './../../shared/tube.service';
 export class VideoSearchResultComponent implements OnInit {
   @Input() videos:any;
   pageEvent!: PageEvent;
-  constructor(private tubeService: TubeService) { }
+
+  constructor(private tubeService: TubeService) {
+
+  }
 
   ngOnInit(): void {
   }
@@ -122,5 +125,7 @@ export class VideoSearchResultComponent implements OnInit {
 })
 
   }
+
+
 
 }

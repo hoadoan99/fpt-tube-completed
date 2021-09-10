@@ -8,7 +8,9 @@ export class TubeService {
   constructor(private http:HttpClient) { }
       // call api
 getDataApi(name:string){
-  // return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyDOwINZY5x8U9DZvtsSyKZWE_jfgDPya_c&type=video&maxResults=50`);
+  if (this.apiKey != null && this.apiKey != undefined && this.apiKey != ' ') {
+    return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=${this.apiKey}&type=video&maxResults=50`);
+  }
   return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyBgGT2xxaQQLNKsRIIVfWd9wmNIk8cPPG4&type=video&maxResults=50`);
 }
 addSearch(value:string){
@@ -36,6 +38,23 @@ callApiOrderByTitle(name:string){
 callApiOrderByVideoCount(name:string){
   return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${name}&key=AIzaSyBgGT2xxaQQLNKsRIIVfWd9wmNIk8cPPG4&type=video&maxResults=50&order=videoCount`);
 }
+// Time
+
+delayTime: number = 0;
+apiKey!: string;
+setDelayTime(value:number){
+  this.delayTime = value;
+}
+getDelayTime(){
+ return this.delayTime;
+}
+setKey(value:string){
+  this.apiKey = value;
+}
+getKey(){
+  return this.apiKey;
+}
+
 
 
 }

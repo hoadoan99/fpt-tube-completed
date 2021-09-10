@@ -14,9 +14,9 @@
         #input (keyup.enter)="onEnter(input.value)"
 
         >
-        <!-- <button *ngIf="input.value" matSuffix mat-icon-button aria-label="Clear" (click)="input.value=''">
+        <button *ngIf="input.value" matSuffix mat-icon-button aria-label="Clear" (click)="input.value=''">
           <mat-icon>close</mat-icon>
-        </button> -->
+        </button>
       </mat-form-field>
     </div>
     <!-- setting  -->
@@ -45,7 +45,8 @@
 
 </div>
 <div class="body">
-  <app-video-search-result [videos]="videos"></app-video-search-result>
+  <app-video-search-result *ngIf="!loading" [videos]="videos"></app-video-search-result>
 </div>
 <!-- loading  -->
 <mat-spinner *ngIf="loading" style="margin:  0 auto; font-size: 20px; margin-top:  20px;" ></mat-spinner>
+<h1 *ngIf="isAddApiKey">Please enter API Key!!!</h1>

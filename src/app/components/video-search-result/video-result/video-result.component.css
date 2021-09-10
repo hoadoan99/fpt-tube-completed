@@ -25,6 +25,7 @@ mat-card-actions{
   margin: 0 auto;
   text-align: center;
 }
-.video-wrapper{
-
+button:hover{
+  cursor: pointer;
 }
+

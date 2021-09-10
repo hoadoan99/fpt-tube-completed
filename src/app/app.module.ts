@@ -25,6 +25,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatChipsModule} from '@angular/material/chips';
 import { YouTubePlayerModule } from "@angular/youtube-player";
+import { SettingApiComponent } from './components/header/setting-api/setting-api.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
     HeaderComponent,
     VideoSearchResultComponent,
     VideoResultComponent,
-    OpenVideoComponent
+    OpenVideoComponent,
+    SettingApiComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,9 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
     MatProgressSpinnerModule,
     MatToolbarModule,
     MatChipsModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    MatDatepickerModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

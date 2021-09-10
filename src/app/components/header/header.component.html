@@ -1,0 +1,46 @@
+<div class="ctn">
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <i class="fab fa-youtube"></i>
+    </button>
+    <span>FPT Tube</span>
+    <div class="example-spacer">
+      <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Type to search for videos</mat-label>
+        <!-- <input matInput type="text" placeholder="Ex.Trailer Spider Man 3..."> -->
+        <input
+        matInput type="text"
+        placeholder="Ex.Trailer Spider Man 3..."
+        #input (keyup.enter)="onEnter(input.value)"
+
+        >
+        <!-- <button *ngIf="input.value" matSuffix mat-icon-button aria-label="Clear" (click)="input.value=''">
+          <mat-icon>close</mat-icon>
+        </button> -->
+      </mat-form-field>
+    </div>
+    <!-- setting  -->
+    <button mat-icon-button class="setting-icon favorite-icon" aria-label="Example icon-button with heart icon">Setting
+      <mat-icon>settings</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>
+<div class="fish">
+  <mat-chip-list aria-label="Fish selection">
+    <mat-chip color="accent" selected>All</mat-chip>
+    <mat-chip>Son Tung</mat-chip>
+    <mat-chip>Spider Man</mat-chip>
+    <mat-chip>FPT Software</mat-chip>
+    <mat-chip>Co dau 8 tuoi</mat-chip>
+    <mat-chip>Truc Tiep Game</mat-chip>
+  </mat-chip-list>
+  <!-- <div class="body">
+    <app-video-search-result [videos]="videos"></app-video-search-result>
+  </div> -->
+
+</div>
+<div class="body">
+  <app-video-search-result [videos]="videos"></app-video-search-result>
+</div>
+<!-- loading  -->
+<mat-spinner *ngIf="loading" style="margin:  0 auto; font-size: 25px; margin-top:  20px;" ></mat-spinner>

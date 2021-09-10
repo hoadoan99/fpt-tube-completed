@@ -1,0 +1,20 @@
+.sort{
+  /* margin-left: 10px; */
+}
+.sort-content{
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.content-list{
+  width: 980px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.wrapper-video{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}

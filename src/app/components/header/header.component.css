@@ -1,0 +1,32 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+button{
+  font-size: 45px;
+  margin-right: 20px;
+  margin-bottom: 7px;
+}
+button.setting-icon{
+  font-size: 25px;
+}
+span{
+  font-size: 30px;
+}
+button i{
+  color: #ff0000;
+}
+.example-form-field {
+  width: 75%;
+  height: 100%;
+  margin-top: 29px;
+  margin-left: 102px;
+}
+input{
+  font-size: 25px;
+}
+
+.fish{
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}

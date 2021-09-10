@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto,
+  "Helvetica Neue", sans-serif;
+  background-color: var(--primary-color);
+  color: #fff;
+  overflow-x: hidden;
+  }
+:root{
+  --primary-color:#212121;
+  --secondary-color:#181818;
+  --border-color:#373737;
+}
+.ctn{
+  width: 1200px;
+  padding:  20px;
+  margin: 0 auto;
+
+}
+.mt-10{
+  margin-top: 10px;
+}
+

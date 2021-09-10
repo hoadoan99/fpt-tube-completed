@@ -1,0 +1,38 @@
+<div class="ctn">
+  <!-- sort -- header bottom  -->
+  <div class="sort">
+    <mat-grid-list cols="1" rowHeight="50px" gutterSize="20px"  >
+      <mat-grid-tile>
+        <div class="sort-content">
+          <button mat-button [matMenuTriggerFor]="menu"><mat-icon>sort</mat-icon>Sort</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Sort by date</button>
+            <button mat-menu-item>Sort by rating</button>
+            <button mat-menu-item>Sort by relevance</button>
+            <button mat-menu-item>Sort by title</button>
+            <button mat-menu-item>Sort by videoCount</button>
+            <button mat-menu-item>Sort by viewCount</button>
+          </mat-menu>
+          <span>order </span>
+          <span>From </span>
+          <span>Thu Nov 01 2018 21:37:41 </span> To
+          <span>Thu Nov 01 2018 21:37:41</span>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <!-- end sort  -->
+  <div class="content-list">
+      <div *ngFor="let video of videos">
+        <app-video-result [video]="video"></app-video-result>
+      </div>
+      <!-- pagination  -->
+    <div class="pagination mt-10">
+      <mat-paginator [length]="videos.length"
+                    [pageSize]="5"
+                    aria-label="Select page">
+                    (page)="onChange($event)"
+      </mat-paginator>
+    </div>
+  </div>
+</div>
